@@ -1,0 +1,26 @@
+<iframe src="" id="my-frame">
+
+</iframe>
+
+
+<script>
+    let myFrame = document.getElementById('my-frame');
+    myFrame.onload = () => {
+        try {
+            let secretVal = myFrame.contentWindow.document.getElementById('secret-element').innerText;
+            console.log({ secretVal });
+        } catch (error) {
+            console.log({ error });
+        }
+    }
+
+    const loadSameOrigin = () => { myFrame.src = 'https://same-origin.com/frame.html' };
+    const loadCrossOrigin = () => { myFrame.src = 'https://cross-orgin.com/frame.html '};
+</script>
+
+<button onclick="loadSameOrigin">Same Origin</button>
+<button onclick="loadCrossOrigin">Cross Origin</button>
+
+
+<!-- frame.html -->
+<div id="secret-element">treasure</div>

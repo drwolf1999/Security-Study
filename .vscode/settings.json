@@ -1,0 +1,6 @@
+{
+    "python.pythonPath": "/Users/doyeopkim/.pyenv/shims/python",
+    "python.autoComplete.extraPaths": [
+        "${workspaceFolder}/customModule"
+    ]
+}
